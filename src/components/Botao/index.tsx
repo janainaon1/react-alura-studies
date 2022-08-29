@@ -4,6 +4,7 @@ import style from './Botao.module.scss';
 class Botao extends React.Component<{
     children: string, 
     type?: "button" | "submit" | "reset" | undefined
+    onClick?: () => void; 
   }> {
   render() {
     // const color = 'pink'
@@ -15,9 +16,10 @@ class Botao extends React.Component<{
     // const styles = {
     //   backgroundColor: estaAtivo ? 'green' : 'red'
     // }
-    const { children, type = 'button' } = this.props;
+    const { children, type = 'button', onClick } = this.props;
     return (
       <button className={style.botao} type={type}
+      onClick={onClick}
       // style={{ 
       //   // backgroundColor: color
       //   backgroundColor
